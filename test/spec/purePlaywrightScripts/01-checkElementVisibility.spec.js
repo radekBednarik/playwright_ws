@@ -19,3 +19,13 @@ const { expect } = require("chai");
   // close the browser
   await browser.close();
 })();
+
+/**
+ * Excercise:
+ *
+ * Take the code and adapt:
+ * - open the `https://www.google.com
+ * - check, that `Search` button is hidden
+ *
+ * Assert validation should FAIL
+ */
