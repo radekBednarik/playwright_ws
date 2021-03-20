@@ -1,0 +1,14 @@
+{
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
