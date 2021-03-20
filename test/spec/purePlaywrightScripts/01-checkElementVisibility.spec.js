@@ -24,6 +24,7 @@ const { expect } = require("chai");
  * Excercise:
  *
  * Take the code and adapt:
+ * - use firefox or webkit
  * - open the `https://www.google.com
  * - check, that `Search` button is hidden
  *
