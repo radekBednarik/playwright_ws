@@ -1,3 +1,5 @@
+"use strict";
+
 const os = require("os");
 const { chromium } = require("playwright");
 const { expect } = require("chai");

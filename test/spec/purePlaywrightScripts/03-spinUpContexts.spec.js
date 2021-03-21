@@ -1,3 +1,5 @@
+"use strict";
+
 const { chromium } = require("playwright");
 
 /**
@@ -5,10 +7,10 @@ const { chromium } = require("playwright");
  * and than `spin up` as many separated `contexts` as we want.
  * This is great for parallel execution, since
  * contexts are light-weight and starts very fast.
- * 
+ *
  * in PowerShell, activate Playwright debug console dump
  * via `$env:DEBUG="pw:api"` command. Then execute the script.
- * 
+ *
  * in linux shell, just prepend the `DEBUG=pw:api` before the node command
  */
 (async () => {
