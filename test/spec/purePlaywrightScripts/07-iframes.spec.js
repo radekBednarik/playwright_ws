@@ -34,3 +34,16 @@ const { chromium } = require("playwright");
 
   await browser.close();
 })();
+
+/**
+ * Excercise:
+ *
+ * - comment out the `console.log()` of the iframe content
+ * - get title of the page in the iframe
+ * - verify, that it is NOT equal to string "Twitter Widget Iframe" (test should FAIL)
+ *
+ * Hints:
+ * - use `expect` from "chai" library
+ * - check Frame documentation on how to resolve the title:
+ * - https://playwright.dev/docs/api/class-frame
+ */
