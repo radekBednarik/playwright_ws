@@ -48,6 +48,6 @@ const { chromium } = require("playwright");
     return context.close();
   });
   await Promise.all(shutDownPromises);
-  // close server
+  // close browser
   await browser.close();
 })();

@@ -17,7 +17,7 @@ const { chromium } = require("playwright");
   await page.goto("https://ihned.cz", { waitUntil: "networkidle" });
   /**
    * Wait for element to be attached
-   * the return the handler
+   * then return the handler
    */
   const frameElHndlr = await page.waitForSelector(
     '//iframe[contains(@title, "Twitter settings iframe")]',

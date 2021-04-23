@@ -68,3 +68,11 @@ class Homepage {
   await homepage.wait();
   await homepage.closeBrowser();
 })();
+
+/**
+ * Excercise:
+ * - 1. implement `refresh` method, which will reload the page and then use it
+ * in the execution script
+ * - 2. implement `debug` method, to stop execution and display Debug GUI and
+ * use it in the exectuion script
+ */

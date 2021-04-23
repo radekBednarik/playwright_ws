@@ -19,6 +19,7 @@ const { chromium } = require("playwright");
     page.click("//nav[@id='menu-main']//a[contains(@href, 'services')]//span"),
   ]);
   await page.waitForLoadState();
+  // pause, just to really see something when running this snippet ;)
   await page.waitForTimeout(3000);
 
   await browser.close();
