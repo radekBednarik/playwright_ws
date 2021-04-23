@@ -14,6 +14,7 @@ const { chromium } = require("playwright");
   });
   await page.goto("https://www.tesena.com/en", { waitUntil: "networkidle" });
 
+  // open Services page
   await Promise.all([
     page.waitForNavigation(),
     page.click("//nav[@id='menu-main']//a[contains(@href, 'services')]//span"),
@@ -24,3 +25,12 @@ const { chromium } = require("playwright");
 
   await browser.close();
 })();
+
+/**
+ * Excercise:
+ *
+ * - after the Services page is opened, extend
+ * the script by opening the Events page
+ * - hint - locator for Services nav "button"
+ * //nav[@id='menu-main']//a[contains(@href, 'events')]//span
+ */
