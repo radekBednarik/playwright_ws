@@ -26,12 +26,13 @@ const { chromium } = require("playwright");
    * No need to do the manual "focus" switching
    * like in the selenium.
    */
+  await newPage.waitForTimeout(5000);
   await browser.close();
 })();
 
 /**
  * Excercise:
- * - modify the script, so after the LinkedIn page is opened in the new tab,
+ * - modify the script, so that after the LinkedIn page is opened in the new tab,
  * you will open Tesena YouTube page in the another tab
  * and then wait on that page for 5 seconds
  * - hint - YouTube link locator: //a[@title="Youtube"]
