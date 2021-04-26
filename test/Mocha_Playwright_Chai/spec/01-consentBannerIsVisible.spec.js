@@ -14,7 +14,6 @@ describe("Homepage tests", function () {
      * each spec.js file the root hook was run (when parallel execution is turned on)
      * so `this.browser`, `this.context` and `this.page` instances are available here
      */
-    console.log(this.context);
     homepage = new Homepage(this.context, this.page);
     manager = new CookieManager(this.context, this.page);
 
@@ -32,13 +31,13 @@ describe("Homepage tests", function () {
    * Test that page title is as expected
    *
    */
-  it(`    - page title is ${homepage.titleDefinition}`, async function () {
-    expect(await homepage.title()).to.be.equal(homepage.titleDefinition);
+  it(`- page title is correct`, async function () {
+    expect(await homepage.getPageTitle()).to.be.equal(homepage.titleDefinition);
   });
   /**
    * Test that Accept button (and therefore the Consent banner) is visible
    */
-  it("   - Consent banner is visible", async function () {
+  it("- Consent banner is visible", async function () {
     await manager.bttnAcceptConsents;
   });
 });

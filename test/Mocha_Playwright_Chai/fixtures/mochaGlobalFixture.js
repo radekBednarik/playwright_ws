@@ -14,7 +14,6 @@ exports.mochaGlobalSetup = async function () {
   // and connect to server from parallely executed root hooks and
   // spec files
   process.env.WS_ENDPOINT = this.browserServer.wsEndpoint();
-  console.log(process.env.WS_ENDPOINT);
 };
 /**
  * Creates global Teardown function.

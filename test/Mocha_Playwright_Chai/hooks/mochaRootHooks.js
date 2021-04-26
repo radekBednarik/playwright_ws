@@ -22,7 +22,6 @@ exports.mochaHooks = () => {
         const browser = await chromium.connect({
           wsEndpoint: process.env.WS_ENDPOINT,
         });
-        console.log(browser);
         this.context = await browser.newContext({
           viewport: { width: 1920, height: 1080 },
         });

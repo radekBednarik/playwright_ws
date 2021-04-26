@@ -23,14 +23,6 @@ class GeneralPage {
   }
 
   /**
-   * Returns Promise of page.title()
-   * @returns {Promise<string>}
-   */
-  get title() {
-    return this.page.title();
-  }
-
-  /**
    * Goes to the given url.
    * @param {string} url url to visit
    * @param {number} [timeout=30000] time to wait until timeout thrown
@@ -47,6 +39,13 @@ class GeneralPage {
    */
   async wait(timeout = 5000) {
     await this.page.waitForTimeout(timeout);
+  }
+  /**
+   * Returns page title
+   * @returns {string} page title
+   */
+  async getPageTitle() {
+    return await this.page.title();
   }
 }
 

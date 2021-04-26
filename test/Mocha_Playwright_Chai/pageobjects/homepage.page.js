@@ -18,7 +18,7 @@ class Homepage extends GeneralPage {
      * Homepage title
      * @property
      */
-    this.titleDefinition = "Home  — Tesena";
+    this.titleDefinition = "Home — Tesena";
   }
   /**
    * Opens homepage.
