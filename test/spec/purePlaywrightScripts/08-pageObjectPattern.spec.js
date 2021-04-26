@@ -71,7 +71,7 @@ class Homepage {
 
 /**
  * Excercise:
- * - 1. implement `refresh` method, which will reload the page and then use it
- * in the execution script
+ * - 1. implement `refresh` method, which will reload the page, with
+ * waitUntil options == "networkidle" and then use it in the execution script
  * - documentation link https://playwright.dev/docs/api/class-page#pagereloadoptions
  */

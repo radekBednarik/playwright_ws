@@ -46,4 +46,6 @@ const { chromium } = require("playwright");
  * - use `expect` from "chai" library
  * - check Frame documentation on how to resolve the title:
  * - https://playwright.dev/docs/api/class-frame
+ * - chai assertion "equal":
+ * - https://www.chaijs.com/api/bdd/#method_equal
  */

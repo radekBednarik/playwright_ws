@@ -31,6 +31,4 @@ const { chromium } = require("playwright");
  *
  * - after the Services page is opened, extend
  * the script by opening the Events page
- * - hint - locator for Services nav "button"
- * //nav[@id='menu-main']//a[contains(@href, 'events')]//span
  */
