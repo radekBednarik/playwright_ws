@@ -7,7 +7,7 @@
 
 const { chromium } = require("playwright");
 
-exports.mochaHooks = function () {
+exports.mochaHooks = () => {
   return {
     /**
      * in the beforeAll hook we connect to browser server
@@ -19,10 +19,11 @@ exports.mochaHooks = function () {
      */
     beforeAll: [
       async function () {
-        this.browser = await chromium.connect({
+        const browser = await chromium.connect({
           wsEndpoint: process.env.WS_ENDPOINT,
         });
-        this.context = await this.browser.newContext({
+        console.log(browser);
+        this.context = await browser.newContext({
           viewport: { width: 1920, height: 1080 },
         });
         this.page = await this.context.newPage();

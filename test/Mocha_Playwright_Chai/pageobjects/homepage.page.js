@@ -14,6 +14,11 @@ class Homepage extends GeneralPage {
      * @property
      */
     this.url = "https://www.tesena.com/en";
+    /**
+     * Homepage title
+     * @property
+     */
+    this.titleDefinition = "Home  — Tesena";
   }
   /**
    * Opens homepage.

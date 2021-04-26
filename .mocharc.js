@@ -18,6 +18,10 @@ const { cpus } = require("os");
  * @see https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.js
  */
 module.exports = {
+  require: [
+    "test/Mocha_Playwright_Chai/fixtures/mochaGlobalFixture.js",
+    "test/Mocha_Playwright_Chai/hooks/mochaRootHooks.js",
+  ],
   // default timeout of mocha is very low, needs to be increased
   timeout: 60000,
   // default slow threshold for tests is very low, needs to be increased
