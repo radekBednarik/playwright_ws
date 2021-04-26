@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * These hooks are executed for each test spec, if they are run in parallel.
  * If tests are running sequentially, hooks will be executed only ONCE!
@@ -26,6 +28,10 @@ exports.mochaHooks = function () {
         this.page = await this.context.newPage();
       },
     ],
+    /**
+     * AfterAll hook will close the browser context
+     * after all test in the test suite spec.js file are executed.
+     */
     afterAll: [
       async function () {
         await this.context.close();
