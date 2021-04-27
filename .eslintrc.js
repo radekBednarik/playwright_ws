@@ -15,5 +15,11 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {},
+  overrides: [
+    {
+      files: ["testLibrary.js", "*.spec.js"],
+      rules: { "mocha/no-exports": "off", "mocha/no-setup-in-describe": "off" },
+    },
+  ],
   plugins: ["mocha", "chai-expect"],
 };
