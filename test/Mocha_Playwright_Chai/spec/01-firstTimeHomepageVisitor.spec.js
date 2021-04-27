@@ -4,10 +4,10 @@ const { expect } = require("chai");
 const { Homepage } = require("../pageobjects/homepage.page");
 const { CookieManager } = require("../pageobjects/cookieManager.page");
 
-let homepage;
-let manager;
-
 describe("Homepage tests", function () {
+  let homepage;
+  let manager;
+
   before(async function () {
     /**
      * we already have started browser server and for
