@@ -4,7 +4,7 @@
 
     npm i dotenv
 
-## create .dotenv file
+## create .env file
 
     # select browser from 'chromium | webkit | firefox'
     BROWSER="chromium"
