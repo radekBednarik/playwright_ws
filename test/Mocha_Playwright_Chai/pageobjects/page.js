@@ -42,7 +42,7 @@ class GeneralPage {
   }
   /**
    * Returns page title
-   * @returns {string} page title
+   * @returns {Promise<string>} page title
    */
   async getPageTitle() {
     return await this.page.title();
