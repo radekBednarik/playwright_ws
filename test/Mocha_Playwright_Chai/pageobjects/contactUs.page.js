@@ -37,12 +37,91 @@ class ContactUs extends GeneralPage {
     this.selectorBttnSend = '//form[@id="form_1"]//button[@type="submit"]';
   }
   /**
+   * Returns Promise of the "name" input field element handle
+   * @property
+   * @returns {Promise<ElementHandle>}
+   */
+  get inputName() {
+    return this.page.waitForSelector(this.selectorInputName, {
+      state: "attached",
+      timeout: 15000,
+    });
+  }
+  /**
+   * Returns Promise of the "email" input field element handle
+   * @property
+   * @returns {Promise<ElementHandle>}
+   */
+  get inputEmail() {
+    return this.page.waitForSelector(this.selectorInputEmail, {
+      state: "attached",
+      timeout: 15000,
+    });
+  }
+  /**
+   * Returns Promise of the "message" input textarea element handle
+   * @property
+   * @returns {Promise<ElementHandle>}
+   */
+  get inputTextareaMessage() {
+    return this.page.waitForSelector(this.selectorTextareaMessage, {
+      state: "attached",
+      timeout: 15000,
+    });
+  }
+  /**
+   * Returns Promise of the "send" bttn element handle.
+   * @property
+   * @returns {Promise<ElementHandle>}
+   */
+  get bttnSend() {
+    return this.page.waitForSelector(this.selectorBttnSend, {
+      state: "attached",
+      timeout: 15000,
+    });
+  }
+  /**
    * Visit the page.
    * @async
    * @returns {Promise<void>}
    */
   async visit() {
     super.goto(this.url);
+  }
+  /**
+   * Predicate. Is input field "name" editable?
+   * @async
+   * @returns {Promise<boolean>}
+   */
+  async isInputNameEditable() {
+    const elHndlr = await this.inputName;
+    return await elHndlr.isEditable();
+  }
+  /**
+   * Predicate. Is input field "email" editable?
+   * @async
+   * @returns {Promise<boolean>}
+   */
+  async isInputEmailEditable() {
+    const elHndlr = await this.inputEmail;
+    return await elHndlr.isEditable();
+  }
+  /**
+   * Predicate. Is input textarea "message" editable?
+   * @async
+   * @returns {Promise<boolean>}
+   */
+  async isInputMessageEditable() {
+    const elHndlr = await this.inputTextareaMessage;
+    return await elHndlr.isEditable();
+  }
+  /**
+   * Predicate. Is form "send" button enabled?
+   * @returns {Promise<boolean>}
+   */
+  async isBttnSendEnabled() {
+    const elHndlr = await this.bttnSend;
+    return await elHndlr.isEnabled();
   }
 }
 
