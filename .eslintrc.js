@@ -6,9 +6,14 @@ module.exports = {
     node: true,
     mocha: true,
   },
-  extends: "eslint:recommended",
+  extends: [
+    "eslint:recommended",
+    "plugin:mocha/recommended",
+    "plugin:chai-expect/recommended",
+  ],
   parserOptions: {
     ecmaVersion: 12,
   },
   rules: {},
+  plugins: ["mocha", "chai-expect"],
 };

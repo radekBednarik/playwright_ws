@@ -5,7 +5,9 @@
     "playwright": "^1.9.2"
   },
   "devDependencies": {
-    "eslint": "^7.22.0"
+    "eslint": "^7.22.0",
+    "eslint-plugin-chai-expect": "^2.2.0",
+    "eslint-plugin-mocha": "^8.1.0"
   },
   "name": "playwright_rb_ws",
   "version": "1.0.0",

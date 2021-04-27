@@ -8,7 +8,7 @@ let homepage;
 let manager;
 
 describe("Homepage tests", function () {
-  this.beforeAll(async function () {
+  before(async function () {
     /**
      * we already have started browser server and for
      * each spec.js file the root hook was run (when parallel execution is turned on)
