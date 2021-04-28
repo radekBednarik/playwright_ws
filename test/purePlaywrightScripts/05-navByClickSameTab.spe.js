@@ -30,5 +30,6 @@ const { chromium } = require("playwright");
  * Excercise:
  *
  * - after the Services page is opened, extend
- * the script by opening the Events page
+ * the script by opening the Events page by clicking
+ * on the "Events" nav bar item
  */
