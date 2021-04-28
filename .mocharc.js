@@ -18,6 +18,7 @@ const { cpus } = require("os");
  * @see https://github.com/mochajs/mocha/blob/master/example/config/.mocharc.js
  */
 module.exports = {
+  // add fixtures and hooks modules to require option so Mocha will run them
   require: [
     "test/Mocha_Playwright_Chai/fixtures/mochaGlobalFixture.js",
     "test/Mocha_Playwright_Chai/hooks/mochaRootHooks.js",
