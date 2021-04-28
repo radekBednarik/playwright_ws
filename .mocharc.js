@@ -27,7 +27,7 @@ module.exports = {
   timeout: 60000,
   // default slow threshold for tests is very low, needs to be increased
   slow: 30000,
-  // default directory where Mocha should look for tests
+  // default directories where Mocha should look for tests
   spec: ["test/Mocha_Playwright_Chai/spec/**/*.js"],
   // test interface (BDD)
   ui: "bdd",

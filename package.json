@@ -16,8 +16,13 @@
   "scripts": {
     "test": "node_modules\\.bin\\mocha"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Playwright",
+    "Mocha",
+    "Chai",
+    "test"
+  ],
+  "author": "Radek Bednarik | Tesena",
   "license": "ISC",
-  "description": ""
+  "description": "Introduction to Playwright workshop codebase."
 }
