@@ -24,12 +24,17 @@ const executablePath = os.platform() === "win32" ? winPath : linuxPath;
   });
   expect(await page.isVisible('//button[contains(@class, "btn-confirm")]')).to
     .be.true;
-  
+
   await browser.close();
 })();
 
 /**
  * Excercise:
- * verify, that the language switcher element (in the upper right part of the page)
- * is visible
+ * on this link, you will find the documentation for screenshot command:
+ * https://playwright.dev/docs/api/class-page#pagescreenshotoptions
+ * https://playwright.dev/docs/screenshots
+ *
+ * 1. Capture full page screenshot, before you will close the browser and
+ * save it as "screenshot.png" to the root of the project.
+ * The screenshot should be "interesting".
  */
