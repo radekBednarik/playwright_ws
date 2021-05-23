@@ -16,8 +16,17 @@ const { expect } = require("chai");
   // now visit
   await page.goto("https://www.tesena.com/en", { waitUntil: "networkidle" });
   // validate assertion
-  expect(await page.isVisible('//button[contains(@class, "btn-confirm")]')).to
-    .be.true;
+  const status = await page.isVisible(
+    '//button[contains(@class, "btn-confirm")]'
+  );
+
+  // we have to use try/catch, otherwise in case the assertion throws,
+  // the node.js will just stop
+  try {
+    expect(status).to.be.true;
+  } catch (error) {
+    console.warn(error);
+  }
   // close the browser
   await browser.close();
 })();
