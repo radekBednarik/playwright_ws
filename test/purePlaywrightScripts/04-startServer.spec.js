@@ -5,12 +5,20 @@ const { chromium } = require("playwright");
 /**
  * In real life scenario, we will not write tests using pure Playwright scripts,
  * but probably use some test runner, like Mocha.js, or Jest, ...
+ *
  * In case of Mocha, to achieve parallelization, we use native Mocha functionality.
  * Now, to keep the code DRY, we will use so-called Mocha global setup/teardown and also
  * mochaHooks.
+ *
+ * Variables created in global setup are not accessible in parallel running processes.
+ * BUT, we can pass them in via ENV variables.
+ *
  * To pass created Playwright server WebSocket string from setup to hook, which is started
  * for each in-parallel ran file, which do NOT share state with each other and also not with setup/teardown,
  * we can use Playwright functionality to start browser server and connect to it later.
+ *
+ * Also, using Playwright browser instance server functionality is recommended, since it starts
+ * and closes the browser only once and these are very expensive operation time and memory wise.
  */
 (async () => {
   /**
@@ -24,6 +32,8 @@ const { chromium } = require("playwright");
    * This would be done in Mocha's global root hook
    */
   const instancesPromises = [1, 2, 3].map(() => {
+    // this operation is NOT starting new browser!!
+    // just connection to existing running instance
     return chromium.connect({ wsEndpoint: wsString });
   });
   const instances = await Promise.all(instancesPromises);

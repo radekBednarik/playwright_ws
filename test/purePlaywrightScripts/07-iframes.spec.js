@@ -7,7 +7,7 @@ const { chromium } = require("playwright");
  * Just resolve the iframe into variable and then
  * work with it directly.
  * No need to switch "focus" between page and iframe
- * like in the selenium.
+ * like in the selenium using `switchTo()` method.
  */
 (async () => {
   const browser = await chromium.launch({ headless: false });

@@ -24,6 +24,15 @@
     $env:PWDEBUG=1
     ```
 
+- Update script to spin up only one context
+    ```
+    const contextPromises = [1].map(() => {
+        return browser.newContext({
+            viewport: { width: 800, height: 600 },
+        });
+  });
+    ```
+
 - Turn off the `PWDEBUG=1` debug mode
     ```
     Remove-Item Env:\PWDEBUG
@@ -54,8 +63,22 @@
 
 ## iframes.spec.js
 
+- import `expect` method from "chai"
+
+    ```
+    cosnt {expect} = require("chai");
+    ```
+
+- snippet
+
+    ```
     const title = await iFrame.title();
-    expect(title).not.to.equal("Twitter Widget Iframe");
+    try {
+        expect(title).not.to.equal("Twitter Widget Iframe");
+    } catch (error) {
+        console.warn(error);
+    }
+    ```
 
 ## pageObjectPattern.spec.js
 

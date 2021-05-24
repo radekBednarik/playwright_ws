@@ -35,4 +35,7 @@ const { chromium } = require("playwright");
  * - modify the script, so that after the LinkedIn page is opened in the new tab,
  * you will open Tesena YouTube page in the another tab
  * and then wait on that page for 5 seconds
+ * 
+ * Remember, that opened pages are accessible directly via their variables, 
+ * in this case `page` for Tesena page and `newPage` for LinkedIn
  */

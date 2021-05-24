@@ -15,6 +15,8 @@ const { chromium } = require("playwright");
   await page.goto("https://www.tesena.com/en", { waitUntil: "networkidle" });
 
   // open Services page
+  // waitForNavigation() method should be used in case, that there are redirects before final destination
+  // url is reached.
   await Promise.all([
     page.waitForNavigation(),
     page.click("//nav[@id='menu-main']//a[contains(@href, 'services')]//span"),

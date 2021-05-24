@@ -60,6 +60,8 @@ const { chromium } = require("playwright");
  *
  * - Turn off the `pw:api` debug mode
  * - Turn on the `PWDEBUG=1` debug mode
+ * - update the script, so only one context is spinned up from the browser instance
+ * NOT three
  * - run this script in debug mode step by step using inspector tool
  * (notice, that each context will have its own inspector tool stacked on top of each other)
  * - Turno off the debug mode
