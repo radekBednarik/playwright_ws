@@ -1,5 +1,7 @@
+// what is strict mode? https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 "use strict";
 
+// commonJS syntax for modules: https://en.wikipedia.org/wiki/CommonJS
 const { chromium } = require("playwright");
 const { expect } = require("chai");
 
