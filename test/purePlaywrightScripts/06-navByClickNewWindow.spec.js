@@ -15,6 +15,7 @@ const { chromium } = require("playwright");
   const page = await context.newPage();
   await page.goto("https://www.tesena.com", { waitUntil: "networkidle" });
 
+  // order of promises in the array matters!
   const [newPage] = await Promise.all([
     context.waitForEvent("page"),
     page.click('//a[@title="LinkedIn"]'),

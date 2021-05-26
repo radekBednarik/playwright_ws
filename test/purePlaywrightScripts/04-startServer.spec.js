@@ -14,7 +14,7 @@ const { chromium } = require("playwright");
  * BUT, we can pass them in via ENV variables.
  *
  * To pass created Playwright server WebSocket string from setup to hook, which is started
- * for each in-parallel ran file, which do NOT share state with each other and also not with setup/teardown,
+ * for each in-parallel run file, which do NOT share state with each other and also not with setup/teardown,
  * we can use Playwright functionality to start browser server and connect to it later.
  *
  * Also, using Playwright browser instance server functionality is recommended, since it starts
