@@ -8,6 +8,10 @@ const { expect } = require("chai");
 /**
  * IIFS (Immediately Invoked Func. Expression)
  * wrapper to be able to axecute async/await
+ *
+ * script is executed by
+ *
+ * `node path\to\script.js`
  */
 (async () => {
   const browser = await chromium.launch({ headless: false });
@@ -18,7 +22,7 @@ const { expect } = require("chai");
   // now visit
   await page.goto("https://www.tesena.com/en", { waitUntil: "networkidle" });
   // validate assertion
-  const status = await page.isVisible(
+  const status = await page.isHidden(
     '//button[contains(@class, "btn-confirm")]'
   );
 
