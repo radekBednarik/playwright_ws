@@ -11,12 +11,15 @@ const { chromium } = require("playwright");
  * in PowerShell, activate Playwright debug console dump
  * via `$env:DEBUG="pw:api"` command. Then execute the script.
  * 
+ * to remove ENV variable in PowerShell, use:
+ * Remove-Item Env:\DEBUG
+ * ========
  * in Windows command line, activate debug via:
  * `set DEBUG=pw:api`
  *
- * to remove ENV variable in PowerShell, use:
- * Remove-Item Env:\DEBUG
- *
+ * in command line you cannot remove the ENV variables, you have to close
+ * the command line and open new instance of it
+ * =============
  * in linux shell, just prepend the `DEBUG=pw:api` before the node command
  */
 (async () => {
@@ -66,6 +69,5 @@ const { chromium } = require("playwright");
  * - update the script, so only one context is spinned up from the browser instance
  * NOT three
  * - run this script in debug mode step by step using inspector tool
- * (notice, that each context will have its own inspector tool stacked on top of each other)
- * - Turno off the debug mode
+ * - Turn off the debug mode
  */
