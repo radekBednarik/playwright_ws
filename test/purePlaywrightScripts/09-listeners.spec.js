@@ -18,10 +18,7 @@ const { chromium } = require("playwright");
    * which may trigger the event we want to listen to!!!
    */
   page.on("request", (request) => {
-    const gaRegexp = new RegExp(
-      /^https:\/\/www\.google-analytics.com.*$/,
-      "gm"
-    );
+    const gaRegexp = new RegExp(/^https:\/\/www\.google-analytics.com.*$/, "g");
     const url = request.url();
 
     if (gaRegexp.test(url)) {

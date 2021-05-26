@@ -45,7 +45,7 @@
 - Click on Amazon icon top left to return to homepage
 - Stop the recording.
 
-Now run the file and it should repeat you actions:
+Now run the file and it should repeat your actions:
 
     ```
     node excercise.js
