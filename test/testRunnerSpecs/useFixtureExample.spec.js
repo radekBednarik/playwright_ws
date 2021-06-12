@@ -28,32 +28,18 @@ const test = base.test.extend({
   // fixture representing homepage
   homepage: async ({ context, page }, use) => {
     const homepage = new Homepage(context, page);
+    const cookieBanner = new CookieManager(context, page);
     await homepage.visit();
+    await cookieBanner.clickBttnAcceptConsents();
     // after defining, what the fixture will do
     // we have to use() it
     await use(homepage);
     // here would be a teardown code, if necessary
   },
-  // fixture representing Cookie Manager
-  // it will get passed in the homepage  to ensure the correct order
-  // of using the fixtures
-  cookieManager: async ({ context, page, homepage }, use) => {
-    const cookieManager = new CookieManager(context, page);
-    await homepage;
-    await cookieManager.clickBttnAcceptConsents();
-    await use(cookieManager);
-  },
 });
 
-test("_ga cookie is stored", async ({ context, cookieManager }) => {
-  const cookies = await context.cookies("https://www.tesena.com/en");
-  test.expect(cookies).not.toHaveLength(0);
-
-  const [aid_cookie] = cookies.filter((cookie) => {
-    if (cookie.name === "_ga") {
-      return cookie;
-    }
-  });
-  // console.log(aid_cookie);
-  test.expect(aid_cookie).not.toBeUndefined();
+test("_ga cookie is stored", async ({ homepage }) => {
+  test
+    .expect(await homepage.isCookieStored("_ga", "https://www.tesena.com"))
+    .toBe(true);
 });

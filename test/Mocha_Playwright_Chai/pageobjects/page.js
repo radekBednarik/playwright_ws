@@ -47,6 +47,32 @@ class GeneralPage {
   async getPageTitle() {
     return await this.page.title();
   }
+  /**
+   * Predicate.
+   *
+   * If cookie of the `cookieName` is stored for given `url`, then return `true`. Else `false`.
+   * @async
+   * @param {string} cookieName name of the cookie
+   * @param {string} url full url for which the cookie is set
+   * @returns {boolean}
+   */
+  async isCookieStored(cookieName, url) {
+    const cookies = await this.context.cookies(url);
+
+    if (cookies.length === 0) {
+      return false;
+    }
+
+    const [cookie] = cookies.filter((cookie) => {
+      if (cookie.name === cookieName) {
+        return cookie;
+      }
+    });
+
+    const status = typeof cookie === "undefined" ? false : true;
+
+    return status;
+  }
 }
 
 module.exports = { GeneralPage };
