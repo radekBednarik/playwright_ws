@@ -4,6 +4,7 @@
  * https://playwright.dev/docs/test-configuration
  */
 const { devices } = require("playwright");
+const { cpus } = require("os");
 
 module.exports = {
   // global options, which will be used across all browsers/projects
@@ -47,4 +48,11 @@ module.exports = {
       },
     },
   ],
+  // here we are doing test runner setup
+  // where to find test files
+  testMatch: "**/testRunnerSpecs/**/*.js",
+  // we can specify retry globaly for all tests
+  retries: 2,
+  // number of workers to be run at parallel at max
+  workers: process.env.CI ? 2 : cpus.length / 2,
 };
