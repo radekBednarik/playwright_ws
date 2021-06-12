@@ -32,7 +32,7 @@ class CookieManager extends GeneralPage {
   async clickBttnAcceptConsents() {
     const elHndlr = await this.bttnAcceptConsents;
     await elHndlr.click({ button: "left" });
-    await elHndlr.waitForElementState("hidden");
+    // await elHndlr.waitForElementState("hidden");
   }
 }
 
