@@ -10,7 +10,7 @@ const { test, expect } = require("@playwright/test");
 
 // we will do some tests on the homepage
 
-test.describe("homepage test", () => {
+test.describe("homepage tests", () => {
   // here we are using direct access to the `page` instance of the browser
   // thanks to the test runner you do not have to care about setting it up
   // to be available
@@ -28,6 +28,7 @@ test.describe("homepage test", () => {
   test("_ga cookie is stored", async ({ context }) => {
     const cookies = await context.cookies("https://www.tesena.com/en");
     expect(cookies).not.toHaveLength(0);
+
     const [aid_cookie] = cookies.filter((cookie) => {
       if (cookie.name === "_ga") {
         return cookie;
