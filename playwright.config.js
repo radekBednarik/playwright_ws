@@ -50,9 +50,9 @@ module.exports = {
   ],
   // here we are doing test runner setup
   // where to find test files
-  testMatch: "**/testRunnerSpecs/**/*.js",
+  testMatch: "**/testRunnerSpecs/**/*.spec.js",
   // we can specify retry globaly for all tests
   retries: 2,
   // number of workers to be run at parallel at max
-  workers: process.env.CI ? 2 : cpus.length / 2,
+  workers: process.env.CI ? 2 : cpus().length / 2,
 };
