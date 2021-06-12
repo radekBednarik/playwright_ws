@@ -1,17 +1,18 @@
 {
   "dependencies": {
+    "@playwright/test": "^1.12.2",
     "chai": "^4.3.4",
     "dotenv": "^8.6.0",
     "mocha": "^8.4.0",
-    "playwright": "^1.11.1"
+    "playwright": "^1.12.2"
   },
   "devDependencies": {
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "eslint-plugin-chai-expect": "^2.2.0",
-    "eslint-plugin-mocha": "^8.1.0"
+    "eslint-plugin-mocha": "^8.2.0"
   },
   "name": "playwright_rb_ws",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "test": "node_modules\\.bin\\mocha"
