@@ -7,27 +7,26 @@
     - displays help and all usable commands 
 
     ```
-    Usage: npx playwright codegen [options] [url]
-
-    open page and generate code for user actions
+    Usage: npx playwright [options] [command]
 
     Options:
-    -o, --output <file name>     saves the generated script to a file
-    --target <language>          language to use, one of javascript, python, python-async, csharp (default: "javascript")
-    -b, --browser <browserType>  browser to use, one of cr, chromium, ff, firefox, wk, webkit (default: "chromium")
-    --channel <channel>          Chromium distribution channel, "chrome", "chrome-beta", "msedge-dev", etc
-    --color-scheme <scheme>      emulate preferred color scheme, "light" or "dark"
-    --device <deviceName>        emulate device, for example  "iPhone 11"
-    --geolocation <coordinates>  specify geolocation coordinates, for example "37.819722,-122.478611"
-    --load-storage <filename>    load context storage state from the file, previously saved with --save-storage
-    --lang <language>            specify language / locale, for example "en-GB"
-    --proxy-server <proxy>       specify proxy server, for example "http://myproxy:3128" or "socks5://myproxy:8080"
-    --save-storage <filename>    save context storage state at the end, for later use with --load-storage
-    --timezone <time zone>       time zone to emulate, for example "Europe/Rome"
-    --timeout <timeout>          timeout for Playwright actions in milliseconds (default: "10000")
-    --user-agent <ua string>     specify user agent string
-    --viewport-size <size>       specify browser viewport size in pixels, for example "1280, 720"
-    -h, --help                   display help for command
+    -V, --version                          output the version number
+    -h, --help                             display help for command
+
+    Commands:
+    open [options] [url]                   open page in browser specified via -b, --browser
+    codegen [options] [url]                open page and generate code for user actions
+    debug <app> [args...]                  run command in debug mode: disable timeout, open inspector
+    install [browserType...]               ensure browsers necessary for this version of Playwright are installed
+    install-deps [browserType...]          install dependencies necessary to run browsers (will ask for sudo permissions)
+    cr [options] [url]                     open page in Chromium
+    ff [options] [url]                     open page in Firefox
+    wk [options] [url]                     open page in WebKit
+    screenshot [options] <url> <filename>  capture a page screenshot
+    pdf [options] <url> <filename>         save page as pdf
+    show-trace [options] [trace]           Show trace viewer
+    test [options] [test-filter...]        Run tests with Playwright Test
+    help [command]                         display help for command
     ```
 
 - `npx playwright codegen -b <browser> -o <filepath>`
