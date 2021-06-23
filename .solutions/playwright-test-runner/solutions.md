@@ -172,3 +172,66 @@ test("_ga cookie is stored", async ({ homepage }) => {
     .toBe(true);
 });
 ```
+
+### 4. Create custom worker scoped context, page using test suite
+
+- create spec file `useWorkerFixture.spec.js`
+
+```
+"use strict";
+
+const base = require("@playwright/test");
+const {
+  Homepage,
+} = require("../Mocha_Playwright_Chai/pageobjects/homepage.page");
+const {
+  CookieManager,
+} = require("../Mocha_Playwright_Chai/pageobjects/cookieManager.page");
+
+const test = base.test.extend({
+  myContext: [
+    async ({ browser }, use) => {
+      const myContext = await browser.newContext();
+      await use(myContext);
+    },
+    { scope: "worker", auto: true },
+  ],
+  myPage: [
+    async ({ myContext }, use) => {
+      const myPage = await myContext.newPage();
+      await use(myPage);
+    },
+    { scope: "worker", auto: true },
+  ],
+  homepage: [
+    async ({ myContext, myPage }, use) => {
+      const homepage = new Homepage(myContext, myPage);
+      await use(homepage);
+    },
+    { scope: "worker", auto: true },
+  ],
+  cookieManager: [
+    async ({ myContext, myPage }, use) => {
+      const cookieManager = new CookieManager(myContext, myPage);
+      await use(cookieManager);
+    },
+    { scope: "worker", auto: true },
+  ],
+});
+
+test.beforeAll(async ({ homepage, cookieManager }) => {
+  await homepage.visit();
+  await cookieManager.clickBttnAcceptConsents();
+});
+
+test("_ga cookie is stored", async ({ homepage }) => {
+  test
+    .expect(await homepage.isCookieStored("_ga", "https://www.tesena.com"))
+    .toBe(true);
+});
+
+test("page title constains 'Tesena'", async ({ homepage }) => {
+  const pageTitle = await homepage.page.title();
+  test.expect(pageTitle).toContain("Tesena");
+});
+```
