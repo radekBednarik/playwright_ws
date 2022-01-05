@@ -1,29 +1,21 @@
 {
-  "dependencies": {
-    "@playwright/test": "^1.12.3",
-    "chai": "^4.3.4",
-    "dotenv": "^8.6.0",
-    "mocha": "^8.4.0",
-    "playwright": "^1.12.3"
-  },
   "devDependencies": {
-    "eslint": "^7.29.0",
-    "eslint-plugin-chai-expect": "^2.2.0",
-    "eslint-plugin-mocha": "^8.2.0"
+    "eslint": "^7.29.0"
   },
   "name": "playwright_rb_ws",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\mocha"
+    "test": "npx playwright test"
   },
   "keywords": [
     "Playwright",
-    "Mocha",
-    "Chai",
     "test"
   ],
   "author": "Radek Bednarik | Tesena",
   "license": "ISC",
-  "description": "Introduction to Playwright workshop codebase."
+  "description": "Introduction to Playwright workshop codebase.",
+  "dependencies": {
+    "@playwright/test": "^1.17.1"
+  }
 }
