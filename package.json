@@ -5,6 +5,7 @@
   "name": "playwright_rb_ws",
   "version": "3.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "npx playwright test"
   },
