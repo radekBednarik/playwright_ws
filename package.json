@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "eslint": "^7.29.0"
-  },
   "name": "playwright_rb_ws",
   "version": "3.0.0",
   "main": "index.js",
@@ -18,5 +15,8 @@
   "description": "Introduction to Playwright workshop codebase.",
   "dependencies": {
     "@playwright/test": "^1.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0"
   }
 }
