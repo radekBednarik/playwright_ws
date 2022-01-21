@@ -1,6 +1,6 @@
-import { test as first, expect } from "@playwright/test";
+import { test as base, expect } from "@playwright/test";
 
-const test = first.extend({
+const test = base.extend({
   page: async ({ page }, use) => {
     await page.goto("https://the-internet.herokuapp.com/dynamic_controls", {
       waitUntil: "domcontentloaded",
