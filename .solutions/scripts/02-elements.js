@@ -1,7 +1,7 @@
-import { webkit } from "@playwright/test";
+import { chromium } from "@playwright/test";
 
 (async () => {
-  const browser = await webkit.launch({ headless: false });
+  const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext({
     viewport: { width: 1920, height: 1080 },
   });
@@ -57,6 +57,26 @@ import { webkit } from "@playwright/test";
   await page.fill("div.example input", "10");
 
   await page.waitForTimeout(2000);
+
+  // drag and drop using page and selectors
+  await page.goto("https://the-internet.herokuapp.com/drag_and_drop", {
+    waitUntil: "domcontentloaded",
+    timeout: 10000,
+  });
+  await page.dragAndDrop("div#column-a", "div#column-b");
+  await page.waitForTimeout(5000);
+
+  // drag to using locator (new in version 1.18)
+  await page.goto("https://the-internet.herokuapp.com/drag_and_drop", {
+    waitUntil: "domcontentloaded",
+    timeout: 10000,
+  });
+  const locColumnA = page.locator("div#column-a");
+  const locColumnB = page.locator("div#column-b");
+
+  await locColumnA.dragTo(locColumnB);
+
+  await page.waitForTimeout(5000);
 
   await browser.close();
 })();
