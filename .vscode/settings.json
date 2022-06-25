@@ -20,7 +20,11 @@
         "**/.DS_Store": true,
         "**/.solutions":true
     },
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
     "debug.javascript.terminalOptions": {
         "skipFiles": [
             "<node_internals>/**"

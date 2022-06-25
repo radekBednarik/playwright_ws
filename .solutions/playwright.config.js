@@ -3,6 +3,7 @@ import { cpus } from "os";
 import { devices } from "@playwright/test";
 
 const config = {
+  reporter: "html",
   // global configuration of browser and context
   use: {
     headless: false,
@@ -23,20 +24,13 @@ const config = {
     {
       name: "Chromium Desktop",
       use: {
-        browserName: "chromium",
+        ...devices["Desktop Chrome"],
       },
     },
     {
       name: "Webkit Desktop",
       use: {
-        browserName: "webkit",
-      },
-    },
-    {
-      name: "Firefox Desktop 800x600",
-      use: {
-        browserName: "firefox",
-        viewport: { width: 800, height: 600 },
+        ...devices["Desktop Safari"],
       },
     },
     {

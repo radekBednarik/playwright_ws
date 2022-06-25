@@ -11,7 +11,7 @@ import { webkit } from "@playwright/test";
     waitUntil: "domcontentloaded",
     timeout: 10000,
   });
-
+  // like frame objects
   const frameLeft = page.frame("frame-left");
   const frameMiddle = page.frame("frame-middle");
   const frameRight = page.frame("frame-right");
@@ -21,6 +21,17 @@ import { webkit } from "@playwright/test";
   console.log("Middle Frame Name: ", frameMiddle.name());
   console.log("Right Frame Name: ", frameRight.name());
   console.log("Bottom Frame Name: ", frameBottom.name());
+
+  await page.waitForTimeout(2000);
+
+  // like locators
+
+  await page.goto("https://the-internet.herokuapp.com/iframe");
+
+  const editorBodyText = page.frameLocator("#mce_0_ifr").locator("#tinymce p");
+  await editorBodyText.evaluate(
+    (element) => (element.innerText = "This is my text now.")
+  );
 
   await page.waitForTimeout(5000);
 

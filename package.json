@@ -14,7 +14,7 @@
   "license": "ISC",
   "description": "Introduction to Playwright workshop codebase.",
   "dependencies": {
-    "@playwright/test": "^1.17.1"
+    "@playwright/test": "^1.22.2"
   },
   "devDependencies": {
     "eslint": "^8.6.0"

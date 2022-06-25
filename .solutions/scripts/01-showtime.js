@@ -8,6 +8,5 @@ import { chromium } from "@playwright/test";
   const page = await context.newPage();
 
   //
-
   await browser.close();
 })();
